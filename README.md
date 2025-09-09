@@ -1,5 +1,7 @@
 # HOTMESS Editorial Commerce — Next.js + Sanity + Tailwind
 
+# HOTMESS Editorial Commerce — Next.js + Sanity + Tailwind
+
 ## 🚀 Quick Start
 
 1. **Install dependencies**
@@ -7,25 +9,40 @@
    npm install
    ```
 
-2. **Configure Sanity CMS**
-   - Create a [Sanity project](https://www.sanity.io/get-started).
-   - Add the schema from `/sanity/schemas/`.
-   - Set your `SANITY_PROJECT_ID` and `SANITY_DATASET` in `.env.local`.
+2. **Configure environment variables**
+   - Copy `.env.example` to `.env.local`
+   - Add your `SANITY_PROJECT_ID` and `SANITY_DATASET`
+   - Set `ADMIN_USER` and `ADMIN_PASS` for admin access
 
-3. **Run locally**
+3. **Configure Sanity CMS**
+   - Create a [Sanity project](https://www.sanity.io/get-started)
+   - Add your schema types to `/schemas/index.ts`
+   - Update the project ID in your environment variables
+
+4. **Run locally**
    ```bash
-   npm run dev
+   npm run dev        # Next.js development server (http://localhost:3000)
+   npm run studio     # Sanity Studio (http://localhost:3333)
    ```
 
-4. **Edit content live**
-   - `npm run studio` to open Sanity Studio.
-   - All editorial sections & lookbook slides are editable.
+5. **Build and test**
+   ```bash
+   npm run build      # Build for production
+   npm run lint       # Check code quality
+   npm start          # Start production server
+   ```
 
-5. **Deploy**
-   - Push to GitHub.
-   - Connect repo to [Vercel](https://vercel.com).
-   - Add `.env.local` env vars in Vercel dashboard.
-   - Hit deploy!
+6. **Deploy**
+   - Push to GitHub
+   - Connect repo to [Vercel](https://vercel.com)
+   - Add environment variables from `.env.example` in Vercel dashboard
+   - Deploy automatically on push!
+
+   **Environment Variables for Deployment:**
+   - `SANITY_PROJECT_ID` - Your Sanity project ID
+   - `SANITY_DATASET` - Usually "production"
+   - `ADMIN_USER` - Admin username for /admin route
+   - `ADMIN_PASS` - Admin password for /admin route
 
 ## 🌈 Features
 
